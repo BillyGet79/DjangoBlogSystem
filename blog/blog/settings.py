@@ -24,7 +24,7 @@ SECRET_KEY = 'xna1z#l+#*6klli1l$b&e(lt4qb_kv38def1v6m3nb&%e&7azd'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['10.198.86.106']
+ALLOWED_HOSTS = ['*', ]
 
 # Application definition
 
@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',  # 数据库引擎
-        'HOST': '127.0.0.1',  # 数据库主机
+        'HOST': '10.198.86.106',  # 数据库主机
         'PORT': 3306,  # 数据库端口
         'USER': 'gaoyifei',  # 数据库用户名
         'PASSWORD': '123456',  # 数据库用户密码
@@ -115,14 +115,14 @@ STATICFILES_DIRS = [
 CACHES = {
     "default": {  # 默认
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://127.0.0.1:6379/0",
+        "LOCATION": "redis://10.198.86.106:6379/0",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }
     },
     "session": {  # session
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://127.0.0.1:6379/1",
+        "LOCATION": "redis://10.198.86.106:6379/1",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }
@@ -186,6 +186,3 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = '/media/'
 
 DEFAULT_CHARSET = 'utf-8'
-
-
-
